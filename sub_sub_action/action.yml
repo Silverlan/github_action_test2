@@ -22,8 +22,8 @@ runs:
       run: |
         # newDefinitions=${{ inputs.definitions }}${{ inputs.input_var }}
         # echo "::set-output name=output_var::$newDefinitions"
-        newDefinitions="${{ env.TEST_SUB_SUB_ENV }}""${{ inputs.input_var }}"
-        newDefinitions+="test" "-DDEPENDENCY_GEOMETRIC_TOOLS_INCLUDE=/d/a/util_image/util_image/third_party_libs/GeometricTools/GTE"
+        newDefinitions="${{ env.TEST_SUB_SUB_ENV }}${{ inputs.input_var }}"
+        newDefinitions+="test -DDEPENDENCY_GEOMETRIC_TOOLS_INCLUDE=/d/a/util_image/util_image/third_party_libs/GeometricTools/GTE"
         echo "TEST_SUB_SUB_ENV=$(echo $newDefinitions)" >> $GITHUB_ENV
         #$(echo $tmpDef)"
 
