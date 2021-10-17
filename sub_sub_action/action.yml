@@ -1,11 +1,11 @@
 name: 'Get Submodule'
 description: 'Downloads and builds a git submodule'
 inputs:
-  input_var:
+  definitions:
     description: 'CMake definitions'
     required: true
     default: ''
-  input_name:
+  input_var:
     description: 'CMake definitions'
     required: true
     default: ''
@@ -20,6 +20,6 @@ runs:
       shell: bash
       id: clone
       run: |
-        echo "::set-output name=output_var::${{ inputs.input_var }}${{ inputs.input_name }}"
+        echo "::set-output name=output_var::${{ inputs.definitions }}${{ inputs.input_var }}"
         #$(echo $tmpDef)"
 
