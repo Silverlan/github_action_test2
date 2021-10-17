@@ -21,5 +21,6 @@ runs:
       id: clone
       run: |
         echo "::set-output name=output_var::${{ inputs.definitions }}${{ inputs.input_var }}"
+        echo "TEST_SUB_SUB_ENV=111222333" >> $GITHUB_ENV
         #$(echo $tmpDef)"
 
