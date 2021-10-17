@@ -1,0 +1,16 @@
+name: 'Get Submodule'
+description: 'Downloads and builds a git submodule'
+outputs:
+  output_var:
+    description: "CMake definitions output"
+    value: ${{ steps.clone.outputs.cmake_definitions }}
+runs:
+  using: "composite"
+  steps: 
+    - name: Clone
+      shell: bash
+      id: clone
+      run: |
+        echo "::set-output name=output_var::1234
+        #$(echo $tmpDef)"
+
