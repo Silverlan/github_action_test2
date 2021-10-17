@@ -5,6 +5,10 @@ inputs:
     description: 'CMake definitions'
     required: true
     default: ''
+  input_name:
+    description: 'CMake definitions'
+    required: true
+    default: ''
 outputs:
   output_var:
     description: "CMake definitions output"
@@ -16,6 +20,6 @@ runs:
       shell: bash
       id: clone
       run: |
-        echo "::set-output name=output_var::${{ inputs.input_var }}1234"
+        echo "::set-output name=output_var::${{ inputs.input_var }}${{ inputs.input_name }}"
         #$(echo $tmpDef)"
 
