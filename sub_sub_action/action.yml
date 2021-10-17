@@ -3,7 +3,7 @@ description: 'Downloads and builds a git submodule'
 outputs:
   output_var:
     description: "CMake definitions output"
-    value: ${{ steps.clone.outputs.cmake_definitions }}
+    value: ${{ steps.clone.outputs.output_var }}
 runs:
   using: "composite"
   steps: 
