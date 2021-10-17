@@ -20,7 +20,8 @@ runs:
       shell: bash
       id: clone
       run: |
-        echo "::set-output name=output_var::${{ inputs.definitions }}${{ inputs.input_var }}"
-        echo "TEST_SUB_SUB_ENV=111222333" >> $GITHUB_ENV
+        newDefinitions=${{ inputs.definitions }}${{ inputs.input_var }}
+        echo "::set-output name=output_var::$newDefinitions"
+        echo "TEST_SUB_SUB_ENV=$newDefinitions" >> $GITHUB_ENV
         #$(echo $tmpDef)"
 
