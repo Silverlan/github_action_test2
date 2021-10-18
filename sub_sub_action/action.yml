@@ -26,9 +26,11 @@ runs:
         newDefinitions+="test -DDEPENDENCY_GEOMETRIC_TOOLS_INCLUDE=/d/a/util_image/util_image/third_party_libs/GeometricTools/GTE"
         echo "TEST_SUB_SUB_ENV=$(echo $newDefinitions)" >> $GITHUB_ENV
         
-        echo "hello world"  >> cmake_vars.txt   
+        #echo "hello world"  >> cmake_vars.txt   
+        printf "hello world"  >> cmake_vars.txt
         cat cmake_vars.txt     
-        echo "hello siva" >> cmake_vars.txt   
+        #echo "hello siva" >> cmake_vars.txt   
+        printf "hello siva"  >> cmake_vars.txt
         cat cmake_vars.txt
         
         #$(echo $tmpDef)"
